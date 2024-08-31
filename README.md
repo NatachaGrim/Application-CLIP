@@ -220,7 +220,7 @@ Linux:
 
 You should see this interface:
 
-![CLIP interface](readme_images/clip_app_terminal.png)
+![CLIP interface](README_images/clip_app_terminal.png)
 
 Enter the name of your ```📁 project_name```. The application will launch in a window of your current browser. If you get a "connection failed" error message, refresh the page. The application may take more or less time to start up depending on the quality of your connection.
 
