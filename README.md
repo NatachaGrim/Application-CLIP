@@ -41,10 +41,10 @@ To ensure all the steps are clear, let's review the structure of the working fol
  │     ├─── 📁 routes
  │     └─── 📁 scripts
  ├─── 📁 clip_env
- ├─── run_PowerShell
- ├─── run_Bash
- ├─── requirements.txt
- └─── README.txt
+ ├─── launch_PowerShell
+ ├─── launch_Bash
+ ├─── run.py
+ └─── requirements.txt
 ```
 
 ### Files and folders required
@@ -210,7 +210,7 @@ source clip_env/bin/activate
 Windows:
 
 ```
-.\run_PowerShell.ps1
+.\launch_PowerShell.ps1
 ```
 
 Mac:
