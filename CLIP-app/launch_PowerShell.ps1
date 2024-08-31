@@ -137,40 +137,41 @@ if (-not $modelExists) {
     Write-Host " the model.py script has been successfully run" -ForegroundColor Green
 
     Write-Output ""
-} else {
-    # Ask the user if they want to fine-tune the model
-    do {
-        Write-Host "Do you want to fine-tune your model? Enter YES or NO: " -NoNewline -ForegroundColor Cyan
-        $fineTuneResponse = Read-Host
-        Write-Output ""
+ } 
+# else {
+#     # Ask the user if they want to fine-tune the model
+#     do {
+#         Write-Host "Do you want to fine-tune your model? Enter YES or NO: " -NoNewline -ForegroundColor Cyan
+#         $fineTuneResponse = Read-Host
+#         Write-Output ""
 
-        if ($fineTuneResponse -eq "YES") {
-            Write-Host "Starting fine-tuning process..." -ForegroundColor Cyan
+#         if ($fineTuneResponse -eq "YES") {
+#             Write-Host "Starting fine-tuning process..." -ForegroundColor Cyan
 
-            # Define paths
-            $fineTuneScriptPath = Join-Path -Path $PSScriptRoot -ChildPath "fine_tune\scripts\fine_tune_clip.py"
-            $fineTuneDataPath = Join-Path -Path $PSScriptRoot -ChildPath "fine_tune\data"
+#             # Define paths
+#             $fineTuneScriptPath = Join-Path -Path $PSScriptRoot -ChildPath "fine_tune\scripts\fine_tune_clip.py"
+#             $fineTuneDataPath = Join-Path -Path $PSScriptRoot -ChildPath "fine_tune\data"
             
-            # Run the fine-tuning script
-            python $fineTuneScriptPath -f "$env:FLASK_ARG"
+#             # Run the fine-tuning script
+#             python $fineTuneScriptPath -f "$env:FLASK_ARG"
 
-            # Display a success message when the script has been successfully run
-            Write-Host "SUCCESS:" -NoNewline -ForegroundColor Black -BackgroundColor Green
-            Write-Host " the fine_tune_clip.py script has been successfully run" -ForegroundColor Green
+#             # Display a success message when the script has been successfully run
+#             Write-Host "SUCCESS:" -NoNewline -ForegroundColor Black -BackgroundColor Green
+#             Write-Host " the fine_tune_clip.py script has been successfully run" -ForegroundColor Green
 
-            Write-Output ""
-            break
-        } elseif ($fineTuneResponse -eq "NO") {
-            Write-Host "Fine-tuning process skipped" -ForegroundColor Cyan
-            Write-Output ""
-            break
-        } else {
-            Write-Host "WARNING:" -NoNewline -ForegroundColor Black -BackgroundColor Red
-            Write-Host " invalid input, please enter YES or NO" -ForegroundColor Red
-            Write-Output ""
-        }
-    } while ($true)
-}
+#             Write-Output ""
+#             break
+#         } elseif ($fineTuneResponse -eq "NO") {
+#             Write-Host "Fine-tuning process skipped" -ForegroundColor Cyan
+#             Write-Output ""
+#             break
+#         } else {
+#             Write-Host "WARNING:" -NoNewline -ForegroundColor Black -BackgroundColor Red
+#             Write-Host " invalid input, please enter YES or NO" -ForegroundColor Red
+#             Write-Output ""
+#         }
+#     } while ($true)
+# }
 
 ########################################################
 ##### FOURTH STEP : STARTING THE FLASK APPLICATION #####
