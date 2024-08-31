@@ -36,4 +36,4 @@ tensor_file = next((os.path.join(torchFolder, fichier) for fichier in fichiers i
 directory_file = f"app/static/{use_case}/{use_case}_list.txt"
 directory_summary = f"app/static/{use_case}/{use_case}_directory.txt"
 image_urls = f"app/static/{use_case}/{use_case}_urls.txt"
-labels_file = f"app/static/{use_case}/ontology/royere_gouache_nft_ontology.csv"
+labels_file = f"app/static/{use_case}/ontology/{use_case}_ontology.csv"
