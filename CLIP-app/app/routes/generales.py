@@ -15,14 +15,20 @@ from app.utils.write_list import write_list
 from torchmetrics.classification import MulticlassConfusionMatrix, MulticlassAccuracy
 
 def generate_image_paths():
-    base_path = Path("app/static/royere_gouache_nft/images")
-    categories = ["gouache_petite"]
+    use_case = os.environ.get("FLASK_ARG", "")
+    base_path = Path(f"app/static/{use_case}/images")
+
     image_paths = []
 
-    for category in categories:
-        category_path = base_path / category
-        if category_path.exists():
-            image_paths.extend([str(img.relative_to(Path("app/static"))).replace("\\", "/") for img in category_path.glob("*.jpg")])
+    if base_path.exists() and base_path.is_dir():
+        for category_path in base_path.iterdir():
+            if category_path.is_dir():
+                # Chercher les fichiers .jpg, .jpeg, et .png dans chaque sous-dossier
+                for ext in ["*.jpg", "*.jpeg", "*.png"]:
+                    image_paths.extend([
+                        str(img.relative_to(Path("app/static"))).replace("\\", "/")
+                        for img in category_path.glob(ext)
+                    ])
 
     return image_paths
 
