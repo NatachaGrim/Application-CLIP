@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Query results</title>
+        <link rel="stylesheet" href="/static/css/grid_classif.css">
+        <script src="static/js/masonry.pkgd.js"></script>
+        <script src="static/js/imagesloaded.pkgd.js"></script>
+        <script src="/static/js/copyPath.js"></script>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon_clip.ico">
+    </head>
+
+    <body>
+        <header>
+            <h1>Interroger un fonds d'images</h1>
+        </header>
+        
+        <div class="barre">
+            <nav>
+                <ul>
+                    <li><a href="#result">À propos des résultats (about the results)</a></li>
+                    <li><a href="#img_grid">Grille des résultats (results grid)</a></li>
+                    <li><a href="{{url_for('page')}}" target="_blank">Retour à l'accuil (back to home)</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="anchor" id="result"></div>
+        
+        <div class="box">
+            <h2>À propos des résultats (about the results)</h2>
+            <p><u>Classe requêtée (queried class)</u> : <b>{{target_class}}</b>.</p>
+            <p><u>Légende (caption)</u> : <b><i>{{caption}}</i></b>.</p>
+            <p><u>Nombre de résultats (number of results)</u> : <b>{{nb_results}}</b>. {{comment_fr}} ({{comment}}).</p>
+                            
+            <p>Plus un résultat est en haut de page, plus il est pertinent. Vous disposez de deux informations 
+                à propos de chaque image : son chemin et la première classe la plus pertinente - avec sa valeur de similarité. 
+                <b>1</b> signifie une <b>similarité parfaite</b>, <b>0</b> signifie une <b>similarité nulle</b>.</p>
+            
+            <p>The higher a result is on the page, the more relevant it is. 
+                You have two pieces of information about each image: its path and the first 
+                most relevant class - along with its similarity value. <b>1</b> means <b>perfect similarity</b>, 
+                <b>0</b> means <b>zero similarity</b>.</p>
+        </div>
+
+        <div class="anchor" id="img_grid"></div>
+        
+        <div class="box_black">
+            <h2>Grille des résultats (results grid)</h2>
+            <h3>Localiser une image (locate an image)</h3>
+
+            <p>Chaque image est accompagnée d'un bouton "copier le chemin". Il vous suffit de cliquer dessus et de coller 
+                le chemin dans l'outil de recherche de votre explorateur de fichier. De cette manière, 
+                vous localiserez rapidement une image dans vos fichiers locaux.</p>
+
+            <p>Each image is accompanied by a "copy path" button. Simply click on it and paste the path into your file 
+                explorer's search tool. This way, you can quickly locate an image in your local files.</p>
+
+            <p>Le sens de lecture est serpentin : de gauche à droite puis de droite à gauche, etc.<br/>The reading direction is serpentine: left to right then right to left, etc.</p>
+            
+            <div id="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 250 }'>
+                {% for image in files %}
+                    <div class="grid-item">
+                        {% if urls[loop.index0] == "-" %}
+                        <img src="{{ url_for('static', filename=image) }}" width="200">
+                        {% else %}
+                            <img src="{{ url_for('static', filename=image) }}" width="200">
+                        {% endif %}
+                        
+                        <div class="bar_path" data-path="{{url_for('static', filename=image)}}" onclick="copyPath('{{url_for('static', filename=image)}}')"><b>&nbsp;Copier le chemin (copy path)</b></div>
+                        
+                        <div class="bar" id="first" style="background-color:{{fp1[loop.index0]}}"><b>&nbsp;{{class1[loop.index0]}}: {{prob1[loop.index0]}}</b></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <p style="margin-bottom:-1em" class="bold">Confusion matrix</p>
+        
+        <script>
+            var grid = document.querySelector('#grid');
+            var msnry = new Masonry( grid, {itemSelector: '.grid-item', percentPosition: true});
+            imagesLoaded( grid ).on( 'progress', function() {msnry.layout();});
+        </script >
+    </body>
+</html>

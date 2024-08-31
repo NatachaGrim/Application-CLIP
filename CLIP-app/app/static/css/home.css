@@ -1,0 +1,162 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    line-height:1.5em;
+}
+
+body {
+    background-image: url('/static/images/home_background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center;
+    width: 1100px; 
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.barre {
+    width: 100%;
+    box-shadow: 1px -1px 10px black;
+    background-color:rgba(153, 101, 21, 0.5);
+    text-shadow: 1px 1px 10px black;
+    position:sticky;
+    top:0;
+    z-index:3;
+    color: white;
+}
+
+nav > ul {
+    list-style:none;
+    text-align:center;
+    padding:0;
+    margin:0;
+}
+
+ul > li {
+    display:inline-block;
+    padding:8px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+nav a {
+    display:block;
+    justify-content:space-between;
+    padding:1px 1px 1px 1px;
+}
+
+ul > li > a {
+    text-decoration:none;
+    color:white;
+    transition: 0.3s;
+}
+
+ul > li > a:hover {
+    text-shadow: 0 0 10px white;
+    color: black;
+}
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -40px;
+    visibility: hidden;
+}
+
+.box {
+    background-color:white;
+    box-shadow: 1px 1px 10px black;
+    padding:15px 60px 30px 60px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+@font-face {
+    font-family: aurora;
+    src: url(/static/font/Aurora.otf);
+}
+
+h1 {
+    color: black;
+    font-family: aurora;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 2px black;
+            
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+            
+    margin-left: 140px;
+    margin-right: 140px;
+  
+    text-align:center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px groove;
+    border-color: black gray;
+}
+
+p {
+    text-align:justify;
+    font-size:15px;
+}
+
+#query {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.box_black {
+    color: white;
+    background-color:black;
+    box-shadow: 1px 1px 10px black;
+    padding:15px 60px 45px 60px;
+    margin-bottom: 8px;
+}
+
+#form, #img-query {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+
+#image-preview {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#image-preview img {
+    max-width: 50%;
+    height: auto;
+}
+
+#button {
+    display: block;
+}
+
+
+
+
+
+#grid {
+    z-index: 0;
+    padding-left: 20px;
+}
+
+.grid-item {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin-left: 5px;
+}

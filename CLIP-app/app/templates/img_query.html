@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats de la requête d'image</title>
+    <link rel="stylesheet" href="/static/css/grid_classif.css">
+    <script src="/static/js/masonry.pkgd.js"></script>
+    <script src="/static/js/imagesloaded.pkgd.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Résultats de la requête d'image</h1>
+    </header>
+    
+    <div id="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 250 }'>
+        {% for image in similar_images %}
+        <div class="grid-item">
+            <img src="{{ image }}" width="200">
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        var grid = document.querySelector('#grid');
+        var msnry = new Masonry(grid, {itemSelector: '.grid-item', percentPosition: true});
+        imagesLoaded(grid).on('progress', function() {
+            msnry.layout();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Free query results</title>
+        <link rel="stylesheet" href="/static/css/grid_cbir.css">
+        <script src="static/js/masonry.pkgd.js"></script>
+        <script src="static/js/imagesloaded.pkgd.js"></script>
+        <script src="/static/js/copyPath.js"></script>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon_clip.ico">
+    </head>
+
+    <body>
+        <header>
+            <h1>Interroger un fonds d'images</h1>
+        </header>
+
+        <div class="barre">
+            <nav>
+                <ul>
+                    <li><a href="#result">À propos des résultats (about the results)</a></li>
+                    <li><a href="#img_grid">Grille des résultats (results grid)</a></li>
+                    <li><a href="{{url_for('page')}}" target="_blank">Retour à l'accuil (back to home)</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="anchor" id="result"></div>
+        
+        <div class="box">
+            <h2>À propos des résultats (about the results)</h2>
+            <p>Requête : <b>{{query}}</b> {{comment_fr}}.<br/>Query: <b>{{query}}</b> {{comment}}.</p>
+            
+            <p>Vous voyez à l'écran les premiers résultats de votre requête libre. 
+                Gardez à l'esprit que ces résultats peuvent être plus discutables 
+                car vous n'avez pas interrogé le modèle sur la base de l'ontologie.</p>
+            
+            <p>You see the first results of your free query on the screen. 
+                Bear in mind that these results may be more doubtful as you have not queried the model 
+                on the basis of the ontology.
+            </p>
+        </div>
+
+        <div class="anchor" id="img_grid"></div>
+
+        <div class="box_black">
+            <h2>Grille des résultats (results grid)</h2>
+            <h3>Localiser une image (locate an image)</h3>
+
+            <p>Chaque image est accompagnée d'un bouton "copier le chemin". Il vous suffit de cliquer dessus et de coller 
+                le chemin dans l'outil de recherche de votre explorateur de fichier. De cette manière, 
+                vous localiserez rapidement une image dans vos fichiers locaux.</p>
+
+            <p>Each image is accompanied by a "copy path" button. Simply click on it and paste the path into your file 
+                explorer's search tool. This way, you can quickly locate an image in your local files.</p>
+
+            <p>Le sens de lecture est serpentin : de gauche à droite puis de droite à gauche, etc.<br/>The reading direction is serpentine: left to right then right to left, etc.</p>
+
+            <div id="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 250 }'>
+                {% set e = 0 %}
+                {% for image in files %}
+                    <div class="grid-item">
+                    {% if not(urls|length) or urls[loop.index-1][:-1] == "-" %}
+                    <img src="{{ url_for('static', filename=image) }}" width="200">
+                    {% else %}
+                        <img src="{{ url_for('static', filename=image) }}" width="200">
+                    {% endif %}
+
+                    <div class="bar_path" data-path="{{url_for('static', filename=image)}}" onclick="copyPath('{{url_for('static', filename=image)}}')"><b>&nbsp;Copier le chemin (copy path)</b></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <script>
+            var grid = document.querySelector('#grid');
+            var msnry = new Masonry(grid, {itemSelector: '.grid-item', percentPosition: true});
+            imagesLoaded(grid).on('progress', function() {
+                msnry.layout();
+            });
+        </script>
+    </body>
+</html>
