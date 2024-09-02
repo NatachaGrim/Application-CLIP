@@ -6,15 +6,18 @@ Redesign of the application developed by [ThorkildFregi](https://github.com/Thor
 
 This application uses a CLIP (*Contrastive Language-Image Pre-training*) model to process images and query them in natural language, all *via* a web interface.
 
-- [Data structure](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#data-structure)
-  - [Files and folders required](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#files-and-folders-required)
-  - [Data required](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#data-required)
-  - [Generated files](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#generated-files)
-- [Setting up the virtual environment](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#setting-up-the-virtual-environment)
-  - [Installing Python](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#step-1-installing-python)
-  - [Installing a virtual environment](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#step-2-installing-a-virtual-environment)
-  - [Installing dependencies](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#step-3-installing-dependencies)
-- [Launch](https://github.com/NatachaGrim/M2-TNAH-Memoire-2024/tree/main/Application_CLIP#Launch)
+- [Data structure](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#data-structure)
+  - [Files and folders required](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#files-and-folders-required)
+  - [Data required](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#data-required)
+  - [Generated files](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#generated-files)
+- [Setting up the virtual environment](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#setting-up-the-virtual-environment)
+  - [Installing Python](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-1-installing-python)
+  - [Installing a virtual environment](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-2-installing-a-virtual-environment)
+  - [Installing dependencies](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-3-installing-dependencies)
+- [Launch](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#launch)
+  - [Position yourself in the right folder](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-1-position-yourself-in-the-right-folder)
+  - [Activate the virtual environment](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-2-activate-the-virtual-environment)
+  - [Run the launcher](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-3-run-the-launcher)
 
 __________
 
