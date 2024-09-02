@@ -20,26 +20,19 @@ __________
 
 ## Data structure
 
-To ensure all the steps are clear, let's review the structure of the working folder and its naming constraints. Other files will be generated as the scripts are run. Here is the initial structure you need to adopt:
+To ensure all the steps are clear, let's review the structure of the working folder and its naming constraints. Other files will be generated as the scripts are run. Here is the initial structure:
 
 ```
 📁 CLIP-app
  ├─── 📁 app
  │     ├─── app.py
  │     ├─── config.py
- │     ├─── 📁 static
- │     │     └─── 📁 project_name
- │     │           ├─── 📁 images
- │     │           │    ├─── 📁 subfoler_01
- │     │           │    ├─── 📁 subfolder_02
- │     │           │    └─── 📁 subfolder_...
- │     │           └─── 📁 ontology
- │     │                 └─── project_name_ontology.txt
- │     ├─── 📁 templates
  │     ├─── 📁 models
- │     ├─── 📁 utils
  │     ├─── 📁 routes
- │     └─── 📁 scripts
+ │     ├─── 📁 scripts
+ │     ├─── 📁 static
+ │     ├─── 📁 templates
+ │     └─── 📁 utils
  ├─── 📁 clip_env
  ├─── launch_PowerShell
  ├─── launch_Bash
@@ -49,28 +42,31 @@ To ensure all the steps are clear, let's review the structure of the working fol
 
 ### Files and folders required
 
-The ```📁 static``` folder contains some folders and files that we haven't specified in the structure. Here's what you need to create in it:
+The ```📁 static``` folder contains subfolders, the contents of which we will not go into in detail. This is where you load your data. To do so, here's what you need to create in it:
 
 ```
-📁 project_name
- ├─── 📁 images
- │     ├─── 📁 subfoler_01
- │     ├─── 📁 subfolder_02
- │     └─── 📁 subfolder_...
- └─── 📁 ontology
-       └─── project_name_ontology.txt
+📁 static
+ └─── 📁 project_name
+       ├─── 📁 images
+       │     ├─── 📁 subfoler_01
+       │     ├─── 📁 subfolder_02
+       │     └─── 📁 subfolder_...
+       └─── 📁 ontology
+             └─── project_name_ontology.txt
 ```
 
-You can name the ```📁 project_name``` and every ```📁 subfolder``` folder as you wish. As a consequence, the ```project_name_ontology.txt``` file must be named after ```📁 project_name```. The ```📁 images``` and ```📁 ontology``` folders must keep these names:
+You can name the ```📁 project_name``` and every ```📁 subfolder``` folder as you wish (with no spaces or special characters). As a consequence, the ```project_name_ontology.txt``` file must be named after ```📁 project_name```. The ```📁 images``` and ```📁 ontology``` folders must keep these names:
 
 ```
-📁 Royere
- ├─── 📁 images
- │     ├─── 📁 subfoler_01
- │     ├─── 📁 subfolder_02
- │     └─── 📁 subfolder_...
- └─── 📁 ontology
-       └─── Royere_ontology.txt
+📁 static
+ └─── 📁 Royere
+       ├─── 📁 images
+       │     ├─── 📁 petites_gouaches
+       │     ├─── 📁 grandes_gouaches
+       │     ├─── 📁 calques_vue_ensemble
+       │     └─── 📁 calques_execution
+       └─── 📁 ontology
+             └─── Royere_ontology.txt
 ```
 
 ### Data required
@@ -104,13 +100,14 @@ The ```project_name_directory.txt``` file is a summary of information about the 
 So once the scripts have been run, the project_name folder will look like this:
 
 ```
-📁 project_name
- ├─── 📁 images
- ├─── 📁 ontology
- │     ├─── project_name_ontology.txt
- │     └─── project_name_ontology.csv
- ├─── project_name_list.txt
- └─── project_name_directory.txt
+📁 static
+ └─── 📁 project_name
+       ├─── 📁 images
+       ├─── 📁 ontology
+       │     ├─── project_name_ontology.txt
+       │     └─── project_name_ontology.csv
+       ├─── project_name_list.txt
+       └─── project_name_directory.txt
 ```
 
 __________
@@ -213,10 +210,10 @@ Windows:
 .\launch_PowerShell.ps1
 ```
 
-Mac:
-
-
-Linux:
+Mac et Linux
+```
+bash launch_Bash.sh
+```
 
 You should see this interface:
 
