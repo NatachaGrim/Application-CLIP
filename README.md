@@ -18,6 +18,7 @@ This application uses a CLIP (*Contrastive Language-Image Pre-training*) model t
   - [Position yourself in the right folder](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-1-position-yourself-in-the-right-folder)
   - [Activate the virtual environment](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-2-activate-the-virtual-environment)
   - [Run the launcher](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-3-run-the-launcher)
+  - [Quit the application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-3-quit-the-application)
 
 __________
 
@@ -224,6 +225,6 @@ You should see this interface:
 
 Enter the name of your ```📁 project_name```. The application will launch in a window of your current browser. If you get a "connection failed" error message, refresh the page. The application may take more or less time to start up depending on the quality of your connection.
 
-### Step 3: quit the application
+### Step 4: quit the application
 
 Return to the terminal and simply press ```ctrl + c```.
