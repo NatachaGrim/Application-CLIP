@@ -210,7 +210,7 @@ Windows:
 .\launch_PowerShell.ps1
 ```
 
-Mac et Linux
+Mac and Linux
 ```
 bash launch_Bash.sh
 ```
