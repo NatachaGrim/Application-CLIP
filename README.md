@@ -209,7 +209,7 @@ Windows:
 .\launch_PowerShell.ps1
 ```
 
-Mac and Linux
+Mac and Linux:
 ```
 bash launch_Bash.sh
 ```
