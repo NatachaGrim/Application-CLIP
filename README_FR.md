@@ -6,20 +6,20 @@ Refonte de l'application développée par [ThorkildFregi](https://github.com/Tho
 
 L'application utilise le modèle CLIP (_Contrastive Language-Image Pre-training_) pour traiter un fonds d'images et l'interroger avec des requêtes textuelles, le tout depuis une interface web.
 
-- [Télécharger l'application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#download-the-application)
-- [Structure](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#data-structure)
-  - [Dossiers et fichiers à créer](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#files-and-folders-required)
-  - [Données requises](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#data-required)
-  - [Fichiers générés](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#generated-files)
-- [Setting up the virtual environment](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#setting-up-the-virtual-environment)
-  - [Installer Python](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-1-installing-python)
-  - [Créer l'environnement virtuel](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-2-installing-a-virtual-environment)
-  - [Installer les dépendances](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-3-installing-dependencies)
-- [Lancement](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#launch)
-  - [Se positionner au bon endroit](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-1-position-yourself-in-the-right-folder)
-  - [Activer l'environnement virtuel](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-2-activate-the-virtual-environment)
-  - [Lancer le _launcher_](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-3-run-the-launcher)
-  - [Quitter l'application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-4-quit-the-application)
+- [Télécharger l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#t%C3%A9l%C3%A9charger-lapplication)
+- [Structure](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#structure)
+  - [Dossiers et fichiers à créer](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#dossiers-et-fichiers-%C3%A0-cr%C3%A9er)
+  - [Données requises](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#donn%C3%A9es-requises)
+  - [Fichiers générés](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#fichiers-g%C3%A9n%C3%A9r%C3%A9s)
+- [Installer l'environnement virtuel](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#installer-lenvironnement-virtuel)
+  - [Installer Python](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-1--installer-python)
+  - [Créer l'environnement virtuel](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-2--cr%C3%A9er-lenvironnement-virtuel)
+  - [Installer les dépendances](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-3--installer-les-d%C3%A9pendances)
+- [Lancement](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#lancement)
+  - [Se positionner au bon endroit](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-1--se-positionner-au-bon-endroit)
+  - [Activer l'environnement virtuel](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-2--activer-lenvironnement-virtuel)
+  - [Lancer le _launcher_](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-3--lancer-le-launcher)
+  - [Quitter l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-4--quitter-lapplication)
 
 __________
 
@@ -219,6 +219,8 @@ bash launch_Bash.sh
 L'une de ces deux interfaces devrait s'afficher :
 
 ![CLIP interface](README_images/clip_app_terminal.png)
+
+![CLIP interface Bash](README_images/clip_app_terminal_bash.png)
 
 Saisissez le nom de votre ```📁 project_name```. L'application s'ouvrira dans le navigateur par défaut. Si l'erreur "La connexion a échoué" s'affiche, rafraîchissez la page. L'application prendra plus ou moins de temps à se lancer en fonction de la qualité de votre connexion.
 
