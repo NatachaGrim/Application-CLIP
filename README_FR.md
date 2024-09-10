@@ -2,9 +2,9 @@
 
 Refonte de l'application développée par [ThorkildFregi](https://github.com/ThorkildFregi) et [Altomator](https://github.com/altomator).
 
-**NOTA BENE**: l'intégration d'une étape de \textit{fine-tuning} est en développement.
+**NOTA BENE**: l'intégration d'une étape de _fine-tuning_ est en développement.
 
-L'application utilise le modèle CLIP (*Contrastive Language-Image Pre-training*) pour traiter un fonds d'images et l'interroger avec des requêtes textuelles, le tout depuis une interface web.
+L'application utilise le modèle CLIP (_Contrastive Language-Image Pre-training_) pour traiter un fonds d'images et l'interroger avec des requêtes textuelles, le tout depuis une interface web.
 
 - [Télécharger l'application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#download-the-application)
 - [Structure](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#data-structure)
