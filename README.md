@@ -2,7 +2,7 @@
 
 Redesign of the application developed by [ThorkildFregi](https://github.com/ThorkildFregi) and [Altomator](https://github.com/altomator).
 
-**PLEASE NOTE**: the application is currently working in a Windows environment. The development of a Bash launcher and the integration of fine-tuning are in progress.
+**PLEASE NOTE**: the integration of a fine-tuning process is under development.
 
 This application uses a CLIP (*Contrastive Language-Image Pre-training*) model to process images and query them in natural language, all *via* a web interface.
 
