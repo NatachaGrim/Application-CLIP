@@ -220,6 +220,8 @@ You should see this interface:
 
 ![CLIP interface](README_images/clip_app_terminal.png)
 
+![CLIP interface Bash](README_images/clip_app_terminal_bash.png)
+
 Enter the name of your ```📁 project_name```. The application will launch in a window of your current browser. If you get a "connection failed" error message, refresh the page. The application may take more or less time to start up depending on the quality of your connection.
 
 ### Step 4: quit the application
