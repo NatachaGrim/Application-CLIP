@@ -162,17 +162,12 @@ Windows:
 .\clip_env\Scripts\activate
 ```
 
-Mac: 
+Mac and Linux:
 ```
 source clip_env/bin/activate
 ```
 
-Linux: 
-```
-source clip_env/bin/activate
-```
-
-Install the dependencies indicated in the ```requirements.txt``` file
+Install the dependencies indicated in the ```requirements.txt``` file:
 ```
 pip install -r requirements.txt
 ```
@@ -201,12 +196,7 @@ Windows:
 .\clip_env\Scripts\activate
 ```
 
-Mac: 
-```
-source clip_env/bin/activate
-```
-
-Linux: 
+Mac and Linux:
 ```
 source clip_env/bin/activate
 ```
