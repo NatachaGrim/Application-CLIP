@@ -102,7 +102,7 @@ Les scripts exécutés lors du lancement vont générer trois fichiers dans le d
 
 Le fichier ```project_name_ontology.csv``` résulte de la conversion du fichier ```project_name_ontology.txt``` au format ```.csv```. Il sera utilisé par le modèle pour traiter les requêtes.
 
-Le fichier ```project_name_list.txt``` liste les images du fonds et indique leur chemin relatif..
+Le fichier ```project_name_list.txt``` liste les images du fonds et indique leur chemin relatif.
 
 Le fichier ```project_name_directory.txt``` synthétise des informations sur le dossier ```📁 project_name``` : son chemin relatif, son chemin absolu, le nombre de sous-dossiers et le nombre total d'images. Sur un pas de 10, le chemin d'une image est listé.
 
@@ -131,7 +131,7 @@ __________
 
 [Python pour Mac](https://www.python.org/downloads/macos/)
 
-Python pour Linux: 
+Python pour Linux :
 ```
 sudo apt install python3
 ```
@@ -140,17 +140,17 @@ sudo apt install python3
 
 Ouvrez votre terminal et utilisez la commande ```cd nom_de_dossier``` pour vous déplacer dans l'ordinateur. Tapez la commande ```cd ..``` pour revenir un cran en arrière. Positionnez-vous dans le dossier ```📁 CLIP-app``` puis exécutez la commande suivante :
 
-Windows:
+Windows :
 ```
 python -m venv clip_env
 ```
 
-Mac:
+Mac :
 ```
 python3 -m venv clip_env
 ```
 
-Linux: 
+Linux : 
 ```
 virtualenv clip_env -p python3
 ```
@@ -159,12 +159,12 @@ virtualenv clip_env -p python3
 
 Activez l'environnement virtuel :
 
-Windows:
+Windows :
 ```
 .\clip_env\Scripts\activate
 ```
 
-Mac et Linux:
+Mac et Linux :
 ```
 source clip_env/bin/activate
 ```
@@ -193,25 +193,25 @@ Positionnez-vous dans le dossier ```📁 CLIP-app```.
 
 ### Étape 2 : activer l'environnement virtuel
 
-Windows: 
+Windows : 
 ```
 .\clip_env\Scripts\activate
 ```
 
-Mac et Linux:
+Mac et Linux :
 ```
 source clip_env/bin/activate
 ```
 
 ### Étape 3 : lancer le _launcher_
 
-Windows:
+Windows :
 
 ```
 .\launch_PowerShell.ps1
 ```
 
-Mac et Linux:
+Mac et Linux :
 ```
 bash launch_Bash.sh
 ```
