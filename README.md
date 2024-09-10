@@ -106,7 +106,7 @@ The ```project_name_list.txt``` file lists the images in the ```📁 images``` f
 
 The ```project_name_directory.txt``` file is a summary of information about the ```📁 project_name``` folder: its relative path, its absolute path, its sub-folders and the total number of images found. In steps of 10, the path of an image is displayed.
 
-Once the scripts have been run, the project_name folder will look like this:
+Once the scripts have been run, the ```📁 project_name``` folder will look like this:
 
 ```
 📁 static
@@ -137,6 +137,8 @@ sudo apt install python3
 ```
 
 ### Step 2: installing a virtual environment
+
+Open your terminal and use the command ```cd folder_name``` to move around your computer and ```cd ..``` to go back one step. Locate yourself in the ```📁 CLIP-app``` folder and run the following command:
 
 Windows:
 ```
@@ -187,7 +189,7 @@ Here are the steps to follow each time you want to launch the application.
 
 ### Step 1: position yourself in the right folder
 
-Open your terminal and use the command ```cd folder_name``` to move around your computer and ```cd ..``` to go back one step. Locate yourself in the ```📁 CLIP-app``` folder.
+Locate yourself in the ```📁 CLIP-app``` folder.
 
 ### Step 2: activate the virtual environment
 
