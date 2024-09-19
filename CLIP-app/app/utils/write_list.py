@@ -1,8 +1,17 @@
 import os
 from flask import current_app as app
 
-# Function that writes a list to a file in binary mode
 def write_list(a_list, filename):
+    """
+    This function writes a list to a file in binary mode. The file is only created if it does not already exist.
+
+    Arguments:
+        :a_list: a Python list containing the data to be written to the file
+        :filename: name of the file in which the tensor will be written
+
+    Output:
+        A file containing the written list
+    """
     if os.path.exists(filename):
         app.logger.info(f"{filename} already exists!")
         return
