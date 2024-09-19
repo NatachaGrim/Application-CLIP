@@ -44,7 +44,7 @@ while true; do
     fi
 done
 
-# Export the FLASK_ARG variable to be accessible in Python scripts
+# Export the FLASK_ARG variable to run the scripts
 export FLASK_ARG
 
 # Display a success message when the variable is validated
@@ -56,7 +56,7 @@ echo ""
 ##### SECOND STEP : LISTING THE IMAGES #####
 ############################################
 
-# Construct full paths for the script and output files
+# Path to script and output files
 scriptPath="app/scripts/recurse.py"
 outputFilePath="app/static/$FLASK_ARG/${FLASK_ARG}_directory.txt"
 
@@ -76,7 +76,7 @@ fi
 ##### THIRD STEP : CONVERTING ONTOLOGY #####
 #############################################
 
-# Construct full paths for the script and output files
+# Path to script and output files
 ontologyScriptPath="app/scripts/ontology.py"
 outputFilePath="app/static/$FLASK_ARG/ontology/${FLASK_ARG}_ontology.csv"
 
@@ -104,7 +104,7 @@ modelExists=$(find "$modelPath" -name "*$FLASK_ARG.pt")
 
 # If the "*$FLASK_ARG.pt" file does not exist, run the "model.py" script
 if [ -z "$modelExists" ]; then
-    echo -e "\033[36m... generating the embeddings for '$FLASK_ARG'\033[0m"
+    echo -e "\033[36m... generating embeddings for '$FLASK_ARG'\033[0m"
     echo ""
     modelScriptPath="app/scripts/model.py"
     python "$modelScriptPath" -f "$FLASK_ARG"
@@ -121,11 +121,11 @@ fi
 
 cd "$(dirname "$0")"
 
-# Chemin vers le script Flask app.py
+# Path to script
 appScriptPath="app/app.py"
 
 export PYTHONPATH="$(pwd)"
-export FLASK_ARG=$FLASK_ARG  # Ensure FLASK_ARG is available to Flask
+export FLASK_ARG=$FLASK_ARG
 
 # Launching the application
 echo "... starting Flask application for $FLASK_ARG"
