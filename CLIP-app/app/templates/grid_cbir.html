@@ -2,20 +2,31 @@
 
 <html lang="en">
     <head>
+        <!-- Sets the page encoding -->
         <meta charset="UTF-8">
+
+        <!-- Title of the page that will appear in the browser tab -->
         <title>Free query results</title>
+
+        <!-- Link to the CSS style sheet -->
         <link rel="stylesheet" href="/static/css/grid_cbir.css">
+
+        <!-- Link to JavaScript scripts -->
         <script src="static/js/masonry.pkgd.js"></script>
         <script src="static/js/imagesloaded.pkgd.js"></script>
         <script src="/static/js/copyPath.js"></script>
+
+        <!-- Page icon -->
         <link rel="icon" type="image/x-icon" href="static/images/favicon_clip.ico">
     </head>
 
     <body>
+        <!-- Page header -->
         <header>
             <h1>Interroger un fonds d'images</h1>
         </header>
 
+        <!-- Navigation bar -->
         <div class="barre">
             <nav>
                 <ul>
@@ -26,8 +37,8 @@
             </nav>
         </div>
 
+        <!-- 'About the results' part with navigation anchor -->
         <div class="anchor" id="result"></div>
-        
         <div class="box">
             <h2>À propos des résultats (about the results)</h2>
             <p>Requête : <b>{{query}}</b> {{comment_fr}}.<br/>Query: <b>{{query}}</b> {{comment}}.</p>
@@ -42,8 +53,8 @@
             </p>
         </div>
 
+        <!-- Grid result with navigation anchor -->
         <div class="anchor" id="img_grid"></div>
-
         <div class="box_black">
             <h2>Grille des résultats (results grid)</h2>
             <h3>Localiser une image (locate an image)</h3>
@@ -57,6 +68,7 @@
 
             <p>Le sens de lecture est serpentin : de gauche à droite puis de droite à gauche, etc.<br/>The reading direction is serpentine: left to right then right to left, etc.</p>
 
+            <!-- Image grid using Masonry for an ordered and dynamic display -->
             <div id="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 250 }'>
                 {% set e = 0 %}
                 {% for image in files %}
@@ -72,7 +84,8 @@
                 {% endfor %}
             </div>
         </div>
-        
+
+        <!-- Script to initialize Masonry and imagesLoaded for smooth image display -->
         <script>
             var grid = document.querySelector('#grid');
             var msnry = new Masonry(grid, {itemSelector: '.grid-item', percentPosition: true});
