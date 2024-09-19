@@ -1,12 +1,12 @@
 """
-This script generates a list of image files contained in a specified folder and its subfolders.
+This script generates a list of image files contained in a specified folder and its subfolders
 
 Arguments:
-    :folderName: folder where to search for image files.
+    :project_name: folder where to search for image files
 
 Output:
-    .txt file listing image paths found in the specified folder.
-    This file is saved in the 'app/static/<project_name>' directory.
+    .txt file listing image paths found in the specified folder
+    This file is saved in the 'app/static/<project_name>' directory
 """
 
 import os
