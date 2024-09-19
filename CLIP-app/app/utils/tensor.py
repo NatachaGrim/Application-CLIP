@@ -1,6 +1,7 @@
 import os
 from flask import current_app as app
 
+# Function that writes a tensor to a file in binary mode
 def write_tensor(tensor, filename):
     if os.path.exists(filename):
         app.logger.info(f"{filename} already exists!")
