@@ -1,12 +1,12 @@
 """
-This script generates CLIP embeddings for a list of image files.
+This script generates CLIP embeddings for a list of image files
 
 Arguments:
-    :folderName: Folder where to search for image files. Must be within 'static/'.
+    :folderName: Folder where to search for image files. Must be within 'static/'
 
 Output:
     Torch tensor (.pt file) containing CLIP embeddings for the images.
-    The file is saved in 'app/models/' with a filename formatted as 'clip_model_MM-DD-YYYY_projectName.pt'.
+    The file is saved in 'app/models/' with a filename formatted as 'MM-DD-YYYY_projectName.pt'
 """
 
 try:
