@@ -6,7 +6,7 @@ Arguments:
 
 Output:
     .csv file containing labels and captions
-    This file is saved in the 'app/static/<flask_arg>/ontology/<flask_arg>_ontology.csv
+    This file is saved as 'app/static/<flask_arg>/ontology/<flask_arg>_ontology.csv'
 """
 
 import csv
