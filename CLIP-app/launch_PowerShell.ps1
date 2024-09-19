@@ -25,7 +25,7 @@ do {
     if (-not $env:FLASK_ARG) {
         Write-Output ""
 
-        # Display an error message if variable is empty
+        # Display an error message if the variable is empty
         Write-Host "WARNING:" -NoNewline -ForegroundColor Black -BackgroundColor Red
         Write-Host " the project folder name must be entered" -ForegroundColor Red
 
@@ -65,7 +65,7 @@ Write-Output ""
 ##### SECOND STEP : LISTING THE IMAGES #####
 ############################################
 
-# Construct full paths for the script and output files
+# Path to script and output files
 $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "app\scripts\recurse.py"
 $outputFilePath = Join-Path -Path $PSScriptRoot -ChildPath "app\static\$($env:FLASK_ARG)\$($env:FLASK_ARG)_directory.txt"
 
@@ -76,7 +76,7 @@ if (-not (Test-Path $outputFilePath)) {
 
     Write-Output ""
 
-    # Run the "recurse.py" script with the correct path
+    # Run "recurse.py" script with the correct path
     python $scriptPath -f "app\static\$($env:FLASK_ARG)" | Out-File -FilePath $outputFilePath
 
     # Display a success message when the script has been successfully run
@@ -90,7 +90,7 @@ if (-not (Test-Path $outputFilePath)) {
 ##### SECOND STEP : CONVERTING ONTOLOGY #####
 #############################################
 
-# Construct full paths for the script and output files
+# Path to script and output files
 $ontologyScriptPath = Join-Path -Path $PSScriptRoot -ChildPath "app\scripts\ontology.py"
 $outputFilePath = Join-Path -Path $PSScriptRoot -ChildPath "app\static\$($env:FLASK_ARG)\ontology\$($env:FLASK_ARG)_ontology.csv"
 
@@ -102,7 +102,7 @@ if (-not (Test-Path $outputFilePath)) {
 
     Write-Output ""
 
-    # Run the "ontology.py" script with the correct path
+    # Run "ontology.py" script
     python $ontologyScriptPath $targetFilePath
 
     # Display a success message when the script has been successfully run
@@ -126,10 +126,10 @@ if (-not $modelExists) {
 
     Write-Output ""
 
-    # Construct full path for the "model.py" script
+    # Path to the "model.py" script
     $modelScriptPath = Join-Path -Path $PSScriptRoot -ChildPath "app\scripts\model.py"
 
-    # Run the "model.py" script
+    # Run "model.py" script
     python $modelScriptPath -f "$env:FLASK_ARG"
 
     # Display a success message when the script has been successfully run
@@ -137,7 +137,7 @@ if (-not $modelExists) {
     Write-Host " the model.py script has been successfully run" -ForegroundColor Green
 
     Write-Output ""
- } 
+ }
 # else {
 #     # Ask the user if they want to fine-tune the model
 #     do {
@@ -179,6 +179,7 @@ if (-not $modelExists) {
 
 Set-Location -Path $PSScriptRoot
 
+# Path to script
 $appScriptPath = Join-Path -Path $PSScriptRoot -ChildPath "app\app.py"
 
 $env:PYTHONPATH = "$PSScriptRoot"
@@ -194,5 +195,5 @@ Start-Process "flask" "--app $appScriptPath --debug run" -NoNewWindow
 # Wait a few seconds to ensure the app is well run
 Start-Sleep -Seconds 15
 
-# Open homepage in the default browser
+# Open homepage in default browser
 Start-Process "http://127.0.0.1:5000"
