@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets the page encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the page that will appear in the browser tab -->
     <title>CLIP query app</title>
+
+    <!-- Link to the CSS style sheet -->
     <link rel="stylesheet" href="/static/css/home.css">
+
+    <!-- Link to JavaScript scripts -->
     <script src="static/js/masonry.pkgd.js"></script>
     <script src="static/js/imagesloaded.pkgd.js"></script>
     <script src="static/js/imageUpload.js"></script>
+
+    <!-- Page icon -->
     <link rel="icon" type="image/x-icon" href="static/images/favicon_clip.ico">
 </head>
 
 <body>
+    <!-- Page header -->
     <header>
         <h1>Interroger un fonds d'images</h1>
     </header>
 
+    <!-- Navigation bar -->
     <div class="barre">
         <nav>
            <ul>
@@ -26,8 +37,8 @@
         </nav>
     </div>
 
+    <!-- 'About' block with navigation anchor -->
     <div class="anchor" id="about"></div>
-
     <div class="box">
         <h2>Sur l'application (about the application)</h2>
         <p>Cette application utilise un modèle CLIP (<i>Contrastive Language–Image Pre-training</i>) pour traiter des images 
@@ -41,22 +52,23 @@
             to display a grid of results. The model confusion matrix is displayed at the foot of the page.</p>
     </div>
 
+    <!-- Text to image query with navigation anchor -->
     <div class="anchor" id="query"></div>
-
     <div class="box_black" id="form">
         <h2>Saisir une requête (submit a query)</h2>
         <p>{{msg}} </p>
         <p><b>{{classes}}</b></p>
-        
+
+        <!-- Form for submitting a request -->
         <form action="{{url_for('page')}}" method="post" style="width: 600px; margin: 0 auto;" target="_blank">
             <input class="uk-input" style="width: 400px; type="text" name="prompt" placeholder="Requête (query)" id="prompt">
             <button class="uk-button uk-button-default" type="submit">Soumettre (submit)</button>
         </form>
     </div>
 
-    <div class="anchor" id="image-query"></div>
-
-    <!-- <div class="box_black" id="img-query">
+    <!-- Image to image query with navigation anchor -->
+    <!-- <div class="anchor" id="image-query"></div>
+    <div class="box_black" id="img-query">
         <h2>Interrogation par image (image query)</h2>
         <p>Déposez une image ici pour trouver des images similaires.</p>
         <form id="image-upload-form" action="/upload-image" method="POST" enctype="multipart/form-data">
@@ -67,17 +79,20 @@
         <div id="similar-images-grid" data-masonry='{ "itemSelector": ".grid-item"}'></div>
     </div> -->
 
+    <!-- 'Fund overview' part with navigation anchor -->
     <div class="anchor" id="fund"></div>
-
     <div class="box_black">
         <h2>Aperçu du fonds (fund overview)</h2>
         <p>Quelques-unes des {{count}} images issues du fonds<br/>Some of the {{count}} images from the fund</p>
-        
+
+        <!-- Image grid using Masonry for an ordered and dynamic display -->
         <div id="grid" data-masonry='{ "itemSelector": ".grid-item"}'>
             {% for image in files %}
                 <div class="grid-item">
+                    <!-- If the URL is empty or invalid, simply display the image -->
                     {% if not(urls|length) or urls[loop.index-1][:-1] == "-" %}
                         <img src="{{ url_for('static', filename=image) }}" width="150">
+                    <!-- Otherwise, display the image as a clickable link -->
                     {% else %}
                         <a href="{{urls[loop.index-1][:-1]}}" target="_blank"><img src="{{ url_for('static', filename=image) }}" width="150"></a>
                     {% endif %}
@@ -86,6 +101,7 @@
         </div>
     </div>
 
+    <!-- Script to initialize Masonry and imagesLoaded for smooth image display -->
     <script>
         var grid = document.querySelector('#grid');
         var msnry = new Masonry(grid, {itemSelector: '.grid-item', percentPosition: true});
