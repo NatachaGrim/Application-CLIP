@@ -1,6 +1,7 @@
 import os
 from flask import current_app as app
 
+# Function that writes a list to a file in binary mode
 def write_list(a_list, filename):
     if os.path.exists(filename):
         app.logger.info(f"{filename} already exists!")
