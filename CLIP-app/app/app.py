@@ -6,7 +6,7 @@ import csv
 import sys
 import os
 
-# Ajouter le chemin du répertoire parent au début de sys.path
+# Path to the parent directory to import modules
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.insert(0, parent_dir)
@@ -15,13 +15,11 @@ from app.config import Config, use_case, torchFolder, img_folder, eval_folder, c
 
 app = Flask(__name__)
 
-app.logger.info('...working on image folder: ' + img_folder)
+app.logger.info('... working on image folder: ' + img_folder)
 
-# Charger le modèle CLIP
+# Load CLIP model
 app.logger.info('...loading the CLIP model')
 print(clip.available_models())
-
-
 try:
     logging.info("Loading CLIP model...")
     model, preprocess = clip.load("ViT-B/32")
@@ -33,43 +31,49 @@ except FileNotFoundError:
 except Exception as e:
     logging.error(f"An error occurred: {e}")
 
-
 model.eval()
 input_resolution = model.visual.input_resolution
 context_length = model.context_length
 vocab_size = model.vocab_size
 
-# Charger les tenseurs
+# Load embeddings
 if not os.path.exists(tensor_file):
-    app.logger.info("### Torch tensor is missing: " + tensor_file)
+    app.logger.info("Embeddings file is missing: " + tensor_file)
     quit()
-app.logger.info("...loading the embeddings from: " + tensor_file)
+app.logger.info("... loading the embeddings from: " + tensor_file)
 image_features = torch.load(tensor_file, map_location=torch.device('cpu'))
 app.logger.info(image_features.size())
 
-# Vérifier le dossier des images
+# Check if the images folder exists
 if not os.path.exists(img_folder):
-    app.logger.info("### images folder does not exist: " + img_folder)
+    app.logger.info("Images folder does not exist: " + img_folder)
     quit()
-app.logger.info('...reading the directory list: ' + directory_file)
+
+# Read the file listing the path to the images
+app.logger.info('... reading the directory list: ' + directory_file)
 if not os.path.exists(directory_file):
-    app.logger.info("### directory list does not exist: " + directory_file)
+    app.logger.info("Directory list does not exist: " + directory_file)
     quit()
 with open(directory_file) as f:
     image_paths = f.readlines()
+
+# Count the number of images listed in the file
 image_count = len(image_paths)
 app.logger.info("   number of images found: " + str(image_count))
 
+# Check the number of images matches the number of loaded embeddings
 if image_count != image_features.size()[0]:
-    app.logger.info("### Tensor size and images number are different!")
+    app.logger.info("Embeddings size and images number are different")
     quit()
 
+# Check if the project summary file exists
 if not os.path.exists(directory_summary):
-    app.logger.info("### directory summary does not exist: " + directory_summary)
+    app.logger.info("Directory summary does not exist: " + directory_summary)
     quit()
 with open(directory_summary) as f:
     summary = f.read()
 
+# Check whether a list of URLs associated with images exists and read it 
 urls = []
 if not os.path.exists(image_urls):
     app.logger.info("### URLs list does not exist: " + image_urls)
@@ -80,6 +84,7 @@ else:
     urls_count = len(urls)
     app.logger.info("   number of URLs found: " + str(urls_count))
 
+# Load image labels and captions
 labels = []
 captions = []
 if not os.path.exists(labels_file):
