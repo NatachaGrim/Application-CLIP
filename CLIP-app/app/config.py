@@ -30,7 +30,7 @@ img_folder = f"app/static/{use_case}/images"
 eval_folder = "app/static/_eval/"
 
 # Folder containing the confusion matrices
-# conf_mat_file = f"{eval_folder}{use_case}_confusion.txt"
+conf_mat_file = f"{eval_folder}{use_case}_confusion.txt"
 
 # Get the list of files in the torchFolder
 fichiers = os.listdir(torchFolder)
