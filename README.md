@@ -4,6 +4,8 @@ Redesign of the application developed by [ThorkildFregi](https://github.com/Thor
 
 **PLEASE NOTE**: the integration of a fine-tuning process is under development.
 
+**WARNING**: the application can no longer be installed on the latest versions of Mac due to package conflicts.
+
 This application uses a CLIP (*Contrastive Language-Image Pre-training*) model to process images and query them in natural language, all *via* a web interface.
 
 - [Download the application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#download-the-application)
