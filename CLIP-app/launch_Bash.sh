@@ -135,13 +135,20 @@ flask --app "$appScriptPath" --debug run &
 # Wait a few seconds to ensure the app is well run
 sleep 20
 
-# Detect the correct JupyterLab URL if running in a Jupyter environment
-if [ -n "$JUPYTER_SERVER_URL" ]; then
+# Detect the correct URL for JupyterLab or JupyterHub environment
+if [ -n "$JUPYTERHUB_SERVICE_PREFIX" ]; then
+    # Use JupyterHub's service prefix to build the URL
+    PROXY_URL="http://127.0.0.1:5000${JUPYTERHUB_SERVICE_PREFIX}proxy/5000/"
+elif [ -n "$JUPYTER_SERVER_URL" ]; then
+    # Fallback to JupyterLab proxy URL if available
     PROXY_URL="${JUPYTER_SERVER_URL}proxy/5000/"
 else
-    # Default to localhost if not in Jupyter environment
+    # Default to localhost if not in a Jupyter environment
     PROXY_URL="http://127.0.0.1:5000"
 fi
+
+# Print the URL for debugging
+echo "Opening Flask application at: $PROXY_URL"
 
 # Open the correct URL in the default browser
 xdg-open "$PROXY_URL" || open "$PROXY_URL"
