@@ -137,18 +137,13 @@ sleep 20
 
 # Detect the correct URL for JupyterLab or JupyterHub environment
 if [ -n "$JUPYTERHUB_SERVICE_PREFIX" ]; then
-    # Use JupyterHub's service prefix to build the URL
-    PROXY_URL="http://172.16.100.17:5000${JUPYTERHUB_SERVICE_PREFIX}proxy/5000/"
+    PROXY_URL="http://172.16.100.17:8888${JUPYTERHUB_SERVICE_PREFIX}proxy/5000/"
 elif [ -n "$JUPYTER_SERVER_URL" ]; then
-    # Fallback to JupyterLab proxy URL if available
     PROXY_URL="${JUPYTER_SERVER_URL}proxy/5000/"
 else
-    # Default to the correct IP address
-    PROXY_URL="http://172.16.100.17:5000"
+    PROXY_URL="http://172.16.100.17:8888/user/charpier/proxy/5000/"
 fi
 
 # Print the URL for debugging
-echo "Opening Flask application at: $PROXY_URL"
-
-# Open the correct URL in the default browser
-xdg-open "$PROXY_URL" || open "$PROXY_URL"
+echo "Flask application is running. Open the following URL in your browser:"
+echo "$PROXY_URL"
