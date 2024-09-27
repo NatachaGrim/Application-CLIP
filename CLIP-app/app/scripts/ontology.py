@@ -1,14 +1,3 @@
-"""
-This script standardises the labels and captions in a .txt file before converting it to .csv format
-
-Arguments:
-    :flask_arg: project folder where to find the input .txt ontology file
-
-Output:
-    .csv file containing labels and captions
-    This file is saved as 'app/static/<flask_arg>/ontology/<flask_arg>_ontology.csv'
-"""
-
 import csv
 import os
 import unidecode
@@ -27,7 +16,21 @@ def txt_to_csv(flask_arg):
     txt_file_path = f"app/static/{flask_arg}/ontology/{flask_arg}_ontology.txt"
     # Path to .csv output ontology file
     csv_file_path = f"app/static/{flask_arg}/ontology/{flask_arg}_ontology.csv"
-
+    
+    # Check if .txt file exists
+    if not os.path.exists(txt_file_path):
+        print(f"ERROR: The input file {txt_file_path} does not exist.")
+        return
+    
+    # Check if .csv file exists and compare modification times
+    if os.path.exists(csv_file_path):
+        txt_mod_time = os.path.getmtime(txt_file_path)
+        csv_mod_time = os.path.getmtime(csv_file_path)
+        
+        # If .csv is newer than .txt, no need to update
+        if csv_mod_time >= txt_mod_time:
+            return
+    
     try:
         with open(txt_file_path, 'r', encoding='utf-8') as txt_file:
             lines = txt_file.readlines()
@@ -48,7 +51,8 @@ def txt_to_csv(flask_arg):
                     definition = normalize_text(definition)
                     writer.writerow([term, definition])
         
-        print(f"Le fichier CSV a été créé avec succès : {csv_file_path}")
+        print(f"The .csv file has been updated successfully.\n")
+        
     except Exception as e:
         print(f"Une erreur s'est produite : {e}")
 
