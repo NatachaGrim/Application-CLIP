@@ -79,19 +79,18 @@ fi
 # Path to script and output files
 ontologyScriptPath="app/scripts/ontology.py"
 outputFilePath="app/static/$FLASK_ARG/ontology/${FLASK_ARG}_ontology.csv"
+targetFilePath="app/static/$FLASK_ARG/ontology/${FLASK_ARG}_ontology.txt"
 
-# If the "$FLASK_ARG_ontology.txt" file does not exist, run the "ontology.py" script
-if [ ! -f "$outputFilePath" ]; then
-    targetFilePath="app/static/$FLASK_ARG/ontology/${FLASK_ARG}_ontology.txt"
-    
-    echo -e "\033[36m... converting the ontology of '$FLASK_ARG'\033[0m"
-    echo ""
-    python "$ontologyScriptPath" "$targetFilePath"
+# Log the ontology being converted
+echo -e "\033[36m... converting the ontology of '$FLASK_ARG'\033[0m"
+echo ""
 
-    # Display a success message when the script has been successfully run
-    echo -e "\033[32mSUCCESS: ontology successfully converted\033[0m"
-    echo ""
-fi
+# Run the "ontology.py" script
+python "$ontologyScriptPath" "$targetFilePath"
+
+# Display a success message when the script has been successfully run
+echo -e "\033[32mSUCCESS: ontology successfully converted\033[0m"
+echo ""
 
 
 #################################################
