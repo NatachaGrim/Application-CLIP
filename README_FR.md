@@ -4,9 +4,11 @@ Refonte de l'application développée par [ThorkildFregi](https://github.com/Tho
 
 **NOTA BENE**: l'intégration d'une étape de _fine-tuning_ est en développement.
 
+**ATTENTION** : l'application ne peut plus être installée sur les dernières versions de Mac en raison de conflits de paquets.
+
 L'application utilise le modèle CLIP (_Contrastive Language-Image Pre-training_) pour traiter un fonds d'images et l'interroger avec des requêtes textuelles, le tout depuis une interface web.
 
-- [Télécharger l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#t%C3%A9l%C3%A9charger-lapplication)
+- [Cloner l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#cloner-lapplication)
 - [Structure](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#structure)
   - [Dossiers et fichiers à créer](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#dossiers-et-fichiers-%C3%A0-cr%C3%A9er)
   - [Données requises](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#donn%C3%A9es-requises)
@@ -21,11 +23,18 @@ L'application utilise le modèle CLIP (_Contrastive Language-Image Pre-training_
   - [Lancer le _launcher_](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-3--lancer-le-launcher)
   - [Quitter l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-4--quitter-lapplication)
 
+- [Gestion des mises à jour](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#lancement)
+  - [Mettre à jour l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-1--se-positionner-au-bon-endroit)
+  - [Mettre à jour l'ontologie](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-2--activer-lenvironnement-virtuel)
 __________
 
-## Télécharger l'application
+## Cloner l'application
 
-En haut de la page GitHub se trouve un bouton vert ```<> Code```. Cliquez dessus et sélectionnez l'option ```Download ZIP```. Extrayez le dossier à l'emplacement de votre choix sur votre ordinateur.
+En haut de la page GitHub se trouve un bouton vert ```<> Code```. Cliquez dessus et copiez l'URL affiché dans la section ```HTTPS```. Saisissez la commande suivante à l'emplacement de votre choix :
+
+```
+git clone <collezl'URL>
+```
 
 ## Structure
 
@@ -118,6 +127,10 @@ Une fois les scripts exécutés, la structure du dossier ```📁 project_name```
        ├─── project_name_list.txt
        └─── project_name_directory.txt
 ```
+
+Le dernier fichier à être généré en amont du lancement de l'application se trouve dans le dossier ```📁 models```. Il s'agit d'un fichier contenant les représentations vectorielles des images (_embeddings_). Le temps nécessaire à la création de ce fichier dépend du nombre d'images chargées ainsi que de votre puissance de calcul.
+
+Il est fondamental de ne pas interrompre l'exécution des scripts. Cela ne prendra du temps que pour le premier lancement car il ces fichiers n'ont besoin d'être générés qu'une seule fois.
 
 __________
 
@@ -226,4 +239,23 @@ Saisissez le nom de votre ```📁 project_name```. L'application s'ouvrira dans 
 
 ### Étape 4 : quitter l'application
 
-Depuis le terminal, pressez simplement la touche ```ctrl``` enfoncée et appuyez sur la touche ```c```.
+Depuis le terminal, pressez simplement la touche ```ctrl``` enfoncée et appuyez sur la touche ```c```. N'oubliez pas de désactiver l'environnement virtuel.
+
+## Gestion des mises à jour
+
+### Mettre à jour l'application
+
+Avant chaque lancement, déplacez-vous dans le dossier racine de l'application et saisissez les commandes suivantes :
+
+```
+git fetch
+```
+```
+git pull
+```
+
+Cela permet de mettre à jour votre clone par rapport à la version du code source hébergé sur ce dépôt.
+
+### Mettre à jour l'ontologie
+
+Si votre ontologie vient à évoluer, mettez simplement à jour le fichier ```.txt```. Au prochain lancement de l'application, le fichier ```.csv``` se mettra à jour.
