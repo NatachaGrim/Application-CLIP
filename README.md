@@ -30,7 +30,7 @@ __________
 
 ## Clone the application
 
-At the top of the page is a green ```<> Code``` button. Click on it and select the URL displayed for the 'HTTPS' section. To the location of your choice on your computer, enter the following command:
+At the top of the page is a green ```<> Code``` button. Click on it and select the URL displayed for the ```HTTPS``` section. To the location of your choice on your computer, enter the following command:
 
 ```
 git clone <pasteURL>
