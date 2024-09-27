@@ -8,7 +8,7 @@ Redesign of the application developed by [ThorkildFregi](https://github.com/Thor
 
 This application uses a CLIP (*Contrastive Language-Image Pre-training*) model to process images and query them in natural language, all *via* a web interface.
 
-- [Download the application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#download-the-application)
+- [Clone the application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#clone-the-application)
 - [Data structure](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#data-structure)
   - [Files and folders required](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#files-and-folders-required)
   - [Data required](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#data-required)
@@ -22,16 +22,23 @@ This application uses a CLIP (*Contrastive Language-Image Pre-training*) model t
   - [Activate the virtual environment](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-2-activate-the-virtual-environment)
   - [Run the launcher](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-3-run-the-launcher)
   - [Quit the application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#step-4-quit-the-application)
+- [Update management](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#update-management)
+  - [Update the application](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#update-the-application)
+  - [Update ontology](https://github.com/NatachaGrim/Application-CLIP/tree/main?tab=readme-ov-file#update-ontology)
 
 __________
 
-## Download the application
+## Clone the application
 
-At the top of the page is a green ```<> Code``` button. Click on it and select the ```Download ZIP``` option. Extract the files to the location of your choice on your computer.
+At the top of the page is a green ```<> Code``` button. Click on it and select the URL displayed for the 'HTTPS' section. To the location of your choice on your computer, enter the following command:
+
+```
+git clone <pasteURL>
+```
 
 ## Data structure
 
-To ensure all the steps are clear, let's review the structure of the working folder and its naming constraints. Other files will be generated as the scripts are run. Here is the initial structure:
+To ensure all steps are clear, let's review the structure of the working folder and its naming constraints. Other files will be generated as the scripts are run. Here is the initial structure:
 
 ```
 📁 CLIP-app
@@ -120,6 +127,10 @@ Once the scripts have been run, the ```📁 project_name``` folder will look lik
        ├─── project_name_list.txt
        └─── project_name_directory.txt
 ```
+
+The last file to be generated before the application is launched is in the ```📁 models``` folder. This file contains the embeddings of the images. The time required to create this file depends on the number of images loaded and your computing power.
+
+It is essential not to interrupt the execution of scripts. This will only take time for the first run as these files only need to be generated once.
 
 __________
 
@@ -228,4 +239,26 @@ Enter the name of your ```📁 project_name```. The application will launch in a
 
 ### Step 4: quit the application
 
-Return to the terminal and simply press ```ctrl + c```.
+Return to the terminal and simply press ```ctrl + c```. Don't forget to deactivate your virtual environment.
+
+__________
+
+## Update management
+
+### Update the application
+
+Before each launch of the application, go to the root folder and enter the following commands:
+
+```
+git fetch
+git pull
+```
+
+This will update your clone to the version of the source code hosted on this repository.
+
+### Update ontology
+
+If your ontology evolves, simply update the ```.txt``` file. The next time you launch the application, the ```.csv``` file will be updated.
+
+
+
