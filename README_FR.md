@@ -22,10 +22,10 @@ L'application utilise le modèle CLIP (_Contrastive Language-Image Pre-training_
   - [Activer l'environnement virtuel](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-2--activer-lenvironnement-virtuel)
   - [Lancer le _launcher_](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-3--lancer-le-launcher)
   - [Quitter l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-4--quitter-lapplication)
+- [Gestion des mises à jour](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#gestion-des-mises-%C3%A0-jour)
+  - [Mettre à jour l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#mettre-%C3%A0-jour-lapplication)
+  - [Mettre à jour l'ontologie](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#mettre-%C3%A0-jour-lapplication)
 
-- [Gestion des mises à jour](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#lancement)
-  - [Mettre à jour l'application](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-1--se-positionner-au-bon-endroit)
-  - [Mettre à jour l'ontologie](https://github.com/NatachaGrim/Application-CLIP/blob/main/README_FR.md#%C3%A9tape-2--activer-lenvironnement-virtuel)
 __________
 
 ## Cloner l'application
@@ -240,6 +240,8 @@ Saisissez le nom de votre ```📁 project_name```. L'application s'ouvrira dans 
 ### Étape 4 : quitter l'application
 
 Depuis le terminal, pressez simplement la touche ```ctrl``` enfoncée et appuyez sur la touche ```c```. N'oubliez pas de désactiver l'environnement virtuel.
+
+__________
 
 ## Gestion des mises à jour
 
