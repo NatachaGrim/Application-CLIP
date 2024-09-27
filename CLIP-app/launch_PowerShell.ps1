@@ -94,23 +94,23 @@ if (-not (Test-Path $outputFilePath)) {
 $ontologyScriptPath = Join-Path -Path $PSScriptRoot -ChildPath "app\scripts\ontology.py"
 $outputFilePath = Join-Path -Path $PSScriptRoot -ChildPath "app\static\$($env:FLASK_ARG)\ontology\$($env:FLASK_ARG)_ontology.csv"
 
-if (-not (Test-Path $outputFilePath)) {
-    $targetFilePath = Join-Path -Path $PSScriptRoot -ChildPath "app\static\$($env:FLASK_ARG)\ontology\$($env:FLASK_ARG)_ontology.txt"
+# Path to the target .txt file
+$targetFilePath = Join-Path -Path $PSScriptRoot -ChildPath "app\static\$($env:FLASK_ARG)\ontology\$($env:FLASK_ARG)_ontology.txt"
 
-    Write-Host "... converting the ontology of " -NoNewline -ForegroundColor Cyan
-    Write-Host "$env:FLASK_ARG"
+Write-Host "... converting the ontology of " -NoNewline -ForegroundColor Cyan
+Write-Host "$env:FLASK_ARG"
 
-    Write-Output ""
+Write-Output ""
 
-    # Run "ontology.py" script
-    python $ontologyScriptPath $targetFilePath
+# Run "ontology.py" script
+python $ontologyScriptPath $targetFilePath
 
-    # Display a success message when the script has been successfully run
-    Write-Host "SUCCESS:" -NoNewline -ForegroundColor Black -BackgroundColor Green
-    Write-Host " the ontology.py script has been successfully run" -ForegroundColor Green
+# Display a success message when the script has been successfully run
+Write-Host "SUCCESS:" -NoNewline -ForegroundColor Black -BackgroundColor Green
+Write-Host " the ontology.py script has been successfully run" -ForegroundColor Green
 
-    Write-Output ""
-}
+Write-Output ""
+
 
 #################################################
 ##### THIRD STEP : BUILDING CLIP EMBEDDINGS #####
