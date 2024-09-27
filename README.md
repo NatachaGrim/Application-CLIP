@@ -251,6 +251,8 @@ Before each launch of the application, go to the root folder and enter the follo
 
 ```
 git fetch
+```
+```
 git pull
 ```
 
